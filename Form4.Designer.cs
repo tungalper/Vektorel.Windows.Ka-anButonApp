@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BtnKac = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // BtnKac
@@ -41,6 +43,11 @@
             this.BtnKac.UseVisualStyleBackColor = true;
             this.BtnKac.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BtnKac_MouseMove);
             // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -49,6 +56,7 @@
             this.Controls.Add(this.BtnKac);
             this.Name = "Form4";
             this.Text = "Form4";
+            this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
 
         }
@@ -56,5 +64,6 @@
         #endregion
 
         private System.Windows.Forms.Button BtnKac;
+        private System.Windows.Forms.Timer timer;
     }
 }
